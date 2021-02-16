@@ -1,0 +1,13 @@
+<div class="search-bar">
+  <input placeholder="Search country" [(ngModel)]="country" />
+  <select [(ngModel)]="region">
+    <option value="All">Show all</option>
+    <option value="Africa">Africa</option>
+    <option value="America">America</option>
+    <option value="Asia">Asia</option>
+    <option value="Europe">Europe</option>
+    <option value="Oceania">Oceania</option>
+    <option value="Favorites">Favorites</option>
+  </select>
+  <button (click)="find()"></button>
+</div>

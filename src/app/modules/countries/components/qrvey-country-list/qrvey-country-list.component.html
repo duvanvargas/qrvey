@@ -1,0 +1,18 @@
+<div class="list" *ngIf="(countries$ | async).length > 0">
+  <div *ngFor="let item of continents">
+    <div class="region" *ngIf="filterRegion === 'All' || filterRegion === item">
+      <p class="region_title">{{ item }}</p>
+      <div
+        *ngFor="
+          let item of countries$
+            | async
+            | filterRegionCountry: item
+            | filterNameCountry: searchTerm
+        "
+      >
+        <app-qrvey-country-item [item]="item"></app-qrvey-country-item>
+      </div>
+    </div>
+  </div>
+</div>
+<app-qrvey-country-modal [open]="true"></app-qrvey-country-modal>

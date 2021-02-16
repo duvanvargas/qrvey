@@ -1,0 +1,19 @@
+.search {
+  max-height: 420px;
+  background: url("/assets/bg-search.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  padding-top: 100px;
+  h1 {
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 59px;
+    color: var(--dark-blue);
+    span {
+      color: var(--clear-blue);
+    }
+  }
+}

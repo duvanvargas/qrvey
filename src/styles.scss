@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+/* Import custom font */
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+/* Import custom scss */
+@import "app/styles/variables";
+/* global styles */
+body,
+html {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto";
+  font-smooth: always;
+}
