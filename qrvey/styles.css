@@ -1,0 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/* Import custom font */
+/* Import custom scss */
+:root {
+  --placeholder-color: #c4c4c4;
+  --clear-white: #e0e0e0;
+  --dark-blue: #09295e;
+  --clear-blue: #21adcf;
+}
+/* global styles */
+body,
+html {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto";
+}
+
+/*# sourceMappingURL=styles.css.map*/
