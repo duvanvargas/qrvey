@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~11.2.0",
     "@angular/platform-browser-dynamic": "~11.2.0",
     "@angular/router": "~11.2.0",
+    "@larscom/ngrx-store-storagesync": "^6.2.2",
     "@ngrx/effects": "^11.0.1",
     "@ngrx/entity": "^11.0.1",
     "@ngrx/store": "^11.0.1",
