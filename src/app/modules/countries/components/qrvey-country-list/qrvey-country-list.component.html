@@ -10,9 +10,17 @@
             | filterNameCountry: searchTerm
         "
       >
-        <app-qrvey-country-item [item]="item"></app-qrvey-country-item>
+        <app-qrvey-country-item
+          [item]="item"
+          (click)="selectItem(item)"
+        ></app-qrvey-country-item>
       </div>
     </div>
   </div>
 </div>
-<app-qrvey-country-modal [open]="true"></app-qrvey-country-modal>
+<app-qrvey-country-modal
+  *ngIf="openModal"
+  id="modal"
+  [item]="selectedItem"
+  (closeModal)="closeModalOpen($event)"
+></app-qrvey-country-modal>

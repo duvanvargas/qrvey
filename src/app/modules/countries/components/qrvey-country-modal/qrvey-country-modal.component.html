@@ -1,1 +1,21 @@
-<p>qrvey-country-modal works!</p>
+<div class="container">
+  <h2>{{ item.name }} <img class="star" src="assets/star.svg" /></h2>
+  <p><strong>Region: </strong>{{ item.region }}</p>
+  <p><strong>Population: </strong>{{ item.region }}</p>
+  <p><strong>Capital: </strong>{{ item.capital }}</p>
+  <p>
+    <strong>Currency: </strong>
+    <span *ngFor="let currency of item.currencies">{{ currency.name }}, </span>
+  </p>
+  <p>
+    <strong>Language: </strong>
+    <span *ngFor="let language of item.languages">{{ language.name }}, </span>
+  </p>
+  <p>
+    <strong>Border Countries: </strong>
+
+    <span *ngFor="let border of item.borders">{{ border }}, </span>
+  </p>
+  <p><strong>Flag: </strong></p>
+  <img class="flag" [src]="item.flag" />
+</div>

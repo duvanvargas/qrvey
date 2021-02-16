@@ -17,6 +17,8 @@ import { Country } from 'src/app/core/state/countries/interfaces/country';
 export class QrveyCountryListComponent implements OnInit {
   countries$: Observable<Country[]>;
   searchTerm: string;
+  openModal: boolean = false;
+  selectedItem: Country;
   filterRegion: string;
   continents = ['Africa', 'America', 'Asia', 'Europe', 'Oceania', 'Favorites'];
 
@@ -32,5 +34,14 @@ export class QrveyCountryListComponent implements OnInit {
     this.store.select(filterRegion).subscribe((item) => {
       this.filterRegion = item;
     });
+  }
+
+  selectItem(item) {
+    this.openModal = true;
+    this.selectedItem = item;
+  }
+
+  closeModalOpen() {
+    this.openModal = false;
   }
 }
