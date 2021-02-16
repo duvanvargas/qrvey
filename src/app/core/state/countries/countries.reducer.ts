@@ -6,6 +6,8 @@ import {
   loadCountriesFail,
   filterRegionCountry,
   searchTermCountry,
+  addFavorite,
+  removeFavorite,
 } from './countries.actions';
 import { Country } from './interfaces/country';
 import { searchTerm } from './countries.selectors';
@@ -37,11 +39,32 @@ const _countryReducer = createReducer(
   }),
   on(loadCountriesFail, (state) => ({ ...initialState })),
   on(searchTermCountry, (state, action) => {
-    console.log(action);
     return adapter.addMany([], {
       ...state,
       searchTerm: action.searchTerm,
     });
+  }),
+  on(addFavorite, (state, action) => {
+    return adapter.updateOne(
+      {
+        id: action.idCountry,
+        changes: {
+          favorite: true,
+        },
+      },
+      state
+    );
+  }),
+  on(removeFavorite, (state, action) => {
+    return adapter.updateOne(
+      {
+        id: action.idCountry,
+        changes: {
+          favorite: false,
+        },
+      },
+      state
+    );
   }),
   on(filterRegionCountry, (state, action) => ({
     ...state,

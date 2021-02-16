@@ -1,4 +1,6 @@
 <div class="country-item">
   <img [src]="item.flag" alt="flag" />
   {{ item.name }}
+  <img *ngIf="!item.favorite" class="star" src="assets/star.svg" />
+  <img *ngIf="item.favorite" class="star" src="assets/star-fill.svg" />
 </div>

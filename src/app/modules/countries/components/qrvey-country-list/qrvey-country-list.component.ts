@@ -20,7 +20,7 @@ export class QrveyCountryListComponent implements OnInit {
   openModal: boolean = false;
   selectedItem: Country;
   filterRegion: string;
-  continents = ['Africa', 'America', 'Asia', 'Europe', 'Oceania', 'Favorites'];
+  continents = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
 
   constructor(private store: Store<{ countries: Country[] }>) {}
 

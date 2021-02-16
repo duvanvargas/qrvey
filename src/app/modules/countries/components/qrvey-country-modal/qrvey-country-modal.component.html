@@ -1,5 +1,19 @@
 <div class="container">
-  <h2>{{ item.name }} <img class="star" src="assets/star.svg" /></h2>
+  <h2>
+    {{ item.name }}
+    <img
+      *ngIf="!item.favorite"
+      class="star"
+      src="assets/star.svg"
+      (click)="addFav(item.alpha2Code)"
+    />
+    <img
+      *ngIf="item.favorite"
+      class="star"
+      src="assets/star-fill.svg"
+      (click)="removeFav(item.alpha2Code)"
+    />
+  </h2>
   <p><strong>Region: </strong>{{ item.region }}</p>
   <p><strong>Population: </strong>{{ item.region }}</p>
   <p><strong>Capital: </strong>{{ item.capital }}</p>

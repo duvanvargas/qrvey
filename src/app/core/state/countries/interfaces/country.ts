@@ -7,4 +7,5 @@ export interface Country {
   currencies: string[];
   languages: string[];
   borders: string[];
+  favorite: boolean;
 }

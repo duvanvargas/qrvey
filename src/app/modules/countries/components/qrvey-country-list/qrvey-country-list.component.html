@@ -17,6 +17,23 @@
       </div>
     </div>
   </div>
+  <div class="region" *ngIf="filterRegion === 'Favorites'">
+    <p class="region_title">Favorites</p>
+    <div
+      *ngFor="
+        let item of countries$
+          | async
+          | filterRegionCountry: item
+          | filterNameCountry: searchTerm
+      "
+    >
+      <app-qrvey-country-item
+        *ngIf="item.favorite"
+        [item]="item"
+        (click)="selectItem(item)"
+      ></app-qrvey-country-item>
+    </div>
+  </div>
 </div>
 <app-qrvey-country-modal
   *ngIf="openModal"

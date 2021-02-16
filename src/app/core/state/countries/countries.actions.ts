@@ -19,3 +19,11 @@ export const filterRegionCountry = createAction(
   '[Countries component] filterRegionCountry',
   props<{ filterRegion: string }>()
 );
+export const addFavorite = createAction(
+  '[Countries component] addFavorite',
+  props<{ idCountry: string }>()
+);
+export const removeFavorite = createAction(
+  '[Countries component] removeFavorite',
+  props<{ idCountry: string }>()
+);
