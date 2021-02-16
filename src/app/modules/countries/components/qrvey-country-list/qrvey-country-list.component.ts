@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { loadCountries } from 'src/app/core/state/countries/countries.actions';
@@ -17,7 +17,7 @@ import { Country } from 'src/app/core/state/countries/interfaces/country';
 export class QrveyCountryListComponent implements OnInit {
   countries$: Observable<Country[]>;
   searchTerm: string;
-  openModal: boolean = false;
+  openModal = false;
   selectedItem: Country;
   filterRegion: string;
   continents = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
@@ -36,12 +36,12 @@ export class QrveyCountryListComponent implements OnInit {
     });
   }
 
-  selectItem(item) {
+  selectItem(item): void {
     this.openModal = true;
     this.selectedItem = item;
   }
 
-  closeModalOpen() {
+  closeModalOpen(): void {
     this.openModal = false;
   }
 }
