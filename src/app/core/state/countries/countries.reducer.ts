@@ -10,7 +10,6 @@ import {
   removeFavorite,
 } from './countries.actions';
 import { Country } from './interfaces/country';
-import { searchTerm } from './countries.selectors';
 
 export interface CountryState extends EntityState<Country> {
   countriesLoaded: boolean;
@@ -19,6 +18,7 @@ export interface CountryState extends EntityState<Country> {
 }
 
 export const adapter: EntityAdapter<Country> = createEntityAdapter<Country>({
+  // tslint:disable-next-line: no-shadowed-variable
   selectId: (Country) => Country.alpha2Code,
 });
 
@@ -28,11 +28,12 @@ export const initialState = adapter.getInitialState({
   filterRegion: 'All',
 });
 
+// tslint:disable-next-line: variable-name
 const _countryReducer = createReducer(
   initialState,
   on(loadCountries, (state) => ({ ...initialState })),
   on(loadCountriesSuccess, (state, action) => {
-    return adapter.setAll(action.countries, {
+    return adapter.addMany(action.countries, {
       ...state,
       countriesLoaded: true,
     });
@@ -72,6 +73,7 @@ const _countryReducer = createReducer(
   }))
 );
 
+// tslint:disable-next-line: typedef
 export function countryReducer(
   state: CountryState | undefined,
   action: Action

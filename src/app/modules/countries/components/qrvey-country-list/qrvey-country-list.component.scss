@@ -3,6 +3,7 @@
   flex-direction: row;
   padding: 50px;
   .region {
+    margin-right: 10px;
     &_title {
       font-weight: bold;
       font-size: 20px;
@@ -10,4 +11,7 @@
       color: #09295e;
     }
   }
+}
+.no-results {
+  color: #bdbdbd;
 }
